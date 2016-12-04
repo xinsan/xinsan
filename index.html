@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
+   <!--  <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen"> -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" media="screen">
+   <!--  <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print"> -->
+    <script src="javascripts/jquery-1.7.2.min.js"></script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -17,20 +18,52 @@
   </head>
 
   <body>
-    <header>
+    <header id="header">
       <div class="inner">
         <h1>Xinsan</h1>
         <h2></h2>
-        <a href="https://github.com/xinsan/xinsan" class="button"><small>View project on</small> GitHub</a>
       </div>
     </header>
+    
 
+    <nav class="navbar navbar-default">
+      <div class="container-fluid" id="nav">
+        <div class="row">
+          <div class="container">
+            <div class="col-md-12 col-xs-12 col-sm-12" style="padding-left:200px">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navHidden" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navHidden">
+                  <ul class="nav navbar-nav" id="navbar-nav">
+                    <li style="background-color:#67B9F4">
+                      <a href="#">首页 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="./html/php/safe.html">PHP</a></li>
+                    <li><a href="./html/wechat.html">微信开发</a></li>
+                    <li><a href="./html/index.html">Git</a></li>
+                    <li><a href="./html/mysql/MySQL优化.html">MySQL</a></li>
+               
+                    <li><a href="./html/article.html">好文分享</a></li>
+                    <li><a href="./html/tool.html">工具</a></li>
+                    <li><a href="./html/others/list.html">杂谈</a></li>
+                  
+                  </ul>
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+            </div>
+          </div>
+        </div>
+       
+    </nav>
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-         
-
-
         <h3>
         <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
 
@@ -42,7 +75,7 @@
         <aside id="sidebar">
           <a href="https://github.com/xinsan/xinsan/zipball/master" class="button">
             <small>Download</small>
-            .zip file
+            百度俩下
           </a>
           <a href="https://github.com/xinsan/xinsan/tarball/master" class="button">
             <small>Download</small>
@@ -58,5 +91,22 @@
 
   
   </body>
+  <script type="text/javascript">
+        $('#header').click(function(){
+          var speed = 1;
+          var timer=setInterval(function(){
+            speed++;
+            $('#header').css('background-position','0px'+' '+(-speed)+'px');
+            if(speed>=300){
+              clearInterval(timer);
+            }
+          },30); 
+        });
+        $('#navbar-nav').find('li').bind("mousemove",function(){
+          $('#navbar-nav').find('li').css('background-color','');
+          $(this).css('background-color','#67B9F4');
+        });
+  </script>
 </html>
+
 
